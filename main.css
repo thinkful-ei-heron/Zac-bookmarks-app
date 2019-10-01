@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+	width: 700px;
+	margin: 0 auto;
+	border: 1px dashed black;
+}
+
+body {
+	font-family: Arial, sans-serif;
+}
+
+h1 {
+	text-align: center
+}
+
+.top-btn, .bottom-btn {
+	margin: 10px 10px;
+}
+.bottom-btn {
+	display: inline-block;
+}
+
+.btn-visit {
+	margin: 12px;
+}
+.bookmark {
+	padding: 5px;
+	border: 1px solid black;
+}
+article {
+	margin: 10px;
+}
+
+label, input, textarea {
+	display: block;
+	margin: 5px;
+}

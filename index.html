@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="main.css">
+	<title>Bookmark App</title>
+</head>
+<body>
+	<header>
+		<h1>My Bookmarks</h1>
+	</header>
+
+	<div class='container'>
+		<button type='button' role='button' name='new bookmark' class='new top-btn'>New Bookmark</button>
+		<select name='rating filter' class='filter top-btn'>
+			<option value='5' selected>5 stars</option>
+			<option value='4'>4 stars</option>
+			<option value='3'>3 stars</option>
+			<option value='2'>2 stars</option>
+			<option value='1'>1 stars</option>
+		</select>
+		<div>
+			<div class='bookmark'>Title 1
+				<button type='button' role='button' name='delete' class='delete'>Delete</button>
+			</div>
+			<div class='bookmark'>Title 2 - stars</div>
+			<div class='bookmark'>Title 3 - stars</div>
+			<div class='bookmark'>Title 4 - stars</div>
+			<div class='bookmark'>Title 5 - stars</div>
+		</div>
+	</div>
+
+	<br />
+
+	<div class='container'>
+			<button type='button' role='button' name='new bookmark' class='new top-btn'>New Bookmark</button>
+			<select name='rating filter' class='filter top-btn'>
+				<option value='5' selected>5 stars</option>
+				<option value='4'>4 stars</option>
+				<option value='3'>3 stars</option>
+				<option value='2'>2 stars</option>
+				<option value='1'>1 stars</option>
+			</select>
+			<div>
+				<div class='bookmark'>Title 1
+					<button type='button' role='button' name='delete' class='delete'>Delete</button>
+				</div>
+				<div class='expansion'>
+					<button type='button' role='button' name='visit site' class='btn-visit'>Visit Site</button>
+					<span>5 stars</span>
+					<article>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget posuere velit.
+						Vestibulum vehicula diam id nisi luctus, dignissim lobortis elit varius. Integer at feugiat metus.
+						Morbi at lorem dictum, gravida eros in, fermentum urna. Integer non lorem orci.
+						Phasellus massa sem, hendrerit vel condimentum ac, malesuada in orci.
+					</article>
+				</div>
+				<div class='bookmark'>Title 2 - stars</div>
+				<div class='bookmark'>Title 3 - stars</div>
+				<div class='bookmark'>Title 4 - stars</div>
+				<div class='bookmark'>Title 5 - stars</div>
+			</div>
+		</div>
+
+	<br />
+
+	<div class='container'>
+		<form>
+			<label for='url'>New Bookmark URL:</label>
+			<input type='url' name='url' id='url'>
+			<label for='name'>New Bookmark Name:</label>
+			<input type='text' name='name' id='name'>
+			<label for='rating'>Rating:</label>
+			
+			<textarea rows='6' cols='80' placeholder='Link description...'></textarea>
+			<button type='button' role='button' name='cancel' class='bottom-btn'>Cancel</button>
+			<input type='submit' value='Create' class='bottom-btn'>
+		</form>
+	</div>
+
+	<script
+  		src="https://code.jquery.com/jquery-3.4.1.min.js"
+  		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  		crossorigin="anonymous"></script>
+	<script src='main.js' type='module'></script>
+</body>
+</html>
