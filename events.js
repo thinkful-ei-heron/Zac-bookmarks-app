@@ -14,7 +14,8 @@ function handleBtnNew() {
 function handleFilter() {
 	$('.container').on('change', '.filter', function() {
 		store.STORE.filter = Number(this.value);
-		// console.log(store.STORE.filter);
+		console.log(store.STORE.filter);
+		list.render();
 	});
 }
 
