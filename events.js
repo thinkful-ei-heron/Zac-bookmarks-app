@@ -38,6 +38,13 @@ function togglePanel() {
 	});
 }
 
+// triggers Visit button
+// function handleBtnVisit() {
+// 	$('.container').on('click', '.btn-visit', function() {
+
+// 	});
+// }
+
 // triggers Cancel button
 function handleCancel() {
 	$('.container').on('click', '.cancel', function() {
@@ -72,6 +79,7 @@ function initEvents() {
 	handleBtnDelete();
 	handleCancel();
 	handleBtnSubmit();
+	// handleBtnVisit();
 }
 
 export default {

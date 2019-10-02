@@ -1,16 +1,15 @@
 import list from './list.js';
 
 // Bookmark keys:
-// {
-// 	id,
-// 	title,
-// 	rating,
-// 	url,
-// 	desc,
-// 	expanded
-// }
+// 	{
+// 		id,
+// 		title,
+// 		rating,
+// 		url,
+// 		desc,
+// 		expanded
+// 	}
 
-let error;
 const STORE = {
 	bookmarks: [],
 	adding: false,

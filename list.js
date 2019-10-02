@@ -7,14 +7,16 @@ function genList() {
 	for (let i = 0; i < bookmarks.length; i++) {
 		if (bookmarks[i].rating >= store.STORE.filter) {
 			if (bookmarks[i].expanded === false) {
-				output += `<li tabindex='0' class='bookmark' id='${bookmarks[i].id}'>${bookmarks[i].title} - ${bookmarks[i].rating} stars</li>`;
+				output += `<li tabindex='0' class='bookmark' id='${bookmarks[i].id}'>
+				  ${bookmarks[i].title}- ${bookmarks[i].rating} stars</li>`;
 			}
 			else {output += `
 				<li tabindex='0' class='bookmark' id='${bookmarks[i].id}'>${bookmarks[i].title}
-					<button type='button' role='button' name='delete' class='btn-delete'>Delete</button>
+					<button type='button' role='button' name='delete' class='btn btn-delete'>Delete</button>
 				</li>
 				<div class='expansion'>
-					<button type='button' role='button' name='visit site' class='btn-visit'>Visit Site</button>
+					<a href='${bookmarks[i].url}' target="_blank" type='button' role='button' name='visit site'
+					  class='btn btn-visit'>Visit Site</a>
 					<span>${bookmarks[i].rating} stars</span>
 					<article>${bookmarks[i].desc}</article>
 				</div>
@@ -27,8 +29,8 @@ function genList() {
 // Render bookmark list
 function renderList() {
 	$('.container').html(`
-		<button type='button' role='button' name='new bookmark' class='new top-btn'>New Bookmark</button>
-		<select name='rating filter' class='filter top-btn'>
+		<button type='button' role='button' name='new bookmark' class='new btn top-btn'>New Bookmark</button>
+		<select name='rating filter' class='filter btn top-btn'>
 			<option value=0>Rating Filter</option>
 			<option value=5>5 stars</option>
 			<option value=4>4 stars</option>
@@ -62,14 +64,15 @@ function renderForm() {
 				<label for='star5' class='radioLabel'>5</label>
 				<input type='radio' name='rating' value='5' class='radio' id='star5' required></input>
 			<textarea rows='6' cols='80' name='description' placeholder='Link description (optional)'></textarea>
-			<button type='button' role='button' name='cancel' class='cancel bottom-btn'>Cancel</button>
-			<input type='submit' value='Create' class='bottom-btn'>
+			<button type='button' role='button' name='cancel' class='cancel btndddd bottom-btn'>Cancel</button>
+			<input type='submit' value='Create' class='btn bottom-btn'>
 		</form>	
 	`)
 }
 
 // Render container according to the current state
 function render() {
+	$('.error-box').text(store.STORE.error);
 	if (store.STORE.adding === false) renderList();
 	else renderForm();
 }

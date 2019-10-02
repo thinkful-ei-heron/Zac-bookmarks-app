@@ -2,12 +2,6 @@
     box-sizing: border-box;
 }
 
-.container {
-	width: 700px;
-	margin: 0 auto;
-	border: 1px dashed black;
-}
-
 body {
 	font-family: Arial, sans-serif;
 }
@@ -15,17 +9,33 @@ body {
 h1 {
 	text-align: center
 }
+.error-box {
+	text-align: center;
+	color: red;
+	margin: 10px;
+}
 
+.container {
+	display: inline-flex;
+	flex-direction: column;
+	width: 90%;
+	margin: 0 auto;
+	border: 1px dashed black;
+}
+
+.btn {
+	width: 100px;
+}
 .top-btn, .bottom-btn {
 	margin: 10px 10px;
 }
 .bottom-btn {
 	display: inline-block;
 }
-
 .btn-visit {
 	margin: 12px;
 }
+
 .bookmark {
 	padding: 5px;
 	border: 1px solid black;
@@ -46,4 +56,15 @@ label, input, textarea {
 }
 .radio, .radioLabel {
 	display: inline;
+}
+
+@media only screen and (min-width: 600px) {
+	.container {
+	  width: 80%;
+	}
+}
+@media only screen and (min-width: 768px) {
+	.container {
+	  width: 65%;
+	}
 }

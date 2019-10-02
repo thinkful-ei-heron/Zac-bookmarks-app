@@ -7,7 +7,7 @@ function myFetch(url, obj) {
 	return fetch(url, obj)
 	  .then(res => {
 		if (!res.ok) {
-		  error = { code: res.status };
+		  error = {code: res.status};
 		}
 		return res.json();
 	  })
@@ -17,7 +17,7 @@ function myFetch(url, obj) {
 		  store.STORE.error = error.message;
 		  return Promise.reject(error);
 		}
-		
+		else store.STORE.error = null;
 		console.log(data);
 		return data;
 	  });
