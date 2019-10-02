@@ -1,18 +1,18 @@
 'use strict';
 
-//import api from './api';
-//import store from './store';
-//import list from './list';
+import api from './api.js';
+import store from './store.js';
+import list from './list.js';
+import events from './events.js';
 
 // Load bookmarks and update store, initialize event handlers, render
 function main() {
-	console.log('Locked and loaded!');
-	$('h1').text('IMPORT SUCCESSFUL');
+	console.log('Loaded!');
 
-	api.getItems();
+	// api.getItems();
 		// take data and update store
 
-	list.initializeEvents();
+	events.initEvents();
 	list.render();
 }
 
