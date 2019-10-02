@@ -29,6 +29,7 @@ function genBookmark(title, rating, url, desc) {
 
 // adds bookmark to list
 function addItem(obj) {
+	obj.expanded = false;
 	STORE.bookmarks.push(obj);
 	list.renderMain();
 }

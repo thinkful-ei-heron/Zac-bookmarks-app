@@ -9,7 +9,6 @@ function handleBtnNew() {
 	$('.container').on('click', '.new', function() {
 		let obj = new store.genBookmark('Title 1', 4, 'https://www.google.com', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
 		api.addItem(obj);
-		console.log('click!');
 		console.log(store.STORE.bookmarks);
 	});
 }
@@ -25,8 +24,11 @@ function handleFilter() {
 // toggles detail view
 function togglePanel() {
 	$('.container').on('click', 'li', function() {
-		console.log(this.id);
-	})
+		// console.log(this.id);
+		let toggle = store.findById(this.id);
+		toggle.expanded = !toggle.expanded;
+		list.renderMain();
+	});
 }
 
 // triggers Delete button
