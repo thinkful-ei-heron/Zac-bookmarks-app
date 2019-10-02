@@ -19,7 +19,7 @@ function handleFilter() {
 	});
 }
 
-// triggers Delete button
+// Triggers Delete button
 function handleBtnDelete() {
 	$('.container').on('click', '.btn-delete', function() {
 		const id = $(this).parent().attr('id');
@@ -27,14 +27,28 @@ function handleBtnDelete() {
 	});
 }
 
-// toggles detail view
-function togglePanel() {
+// Triggers toggle by click
+function handleToggleClick() {
 	$('.container').on('click', 'li', function() {
 		const toggle = store.findById(this.id);
 		if (toggle !== undefined) {
 			toggle.expanded = !toggle.expanded;
 			list.render();
 		};
+	});
+}
+// Triggers toggle by key
+function handleToggleKey() {
+	$('.container').on('keypress', 'li', function() {
+		const thisMark = this.id
+		if (event.keyCode === 13 || 32) {
+			const toggle = store.findById(thisMark);
+			if (toggle !== undefined) {
+				toggle.expanded = !toggle.expanded;
+				list.render();
+			};
+		$(`#${thisMark}`).focus();
+		}
 	});
 }
 
@@ -74,7 +88,8 @@ function handleBtnSubmit() {
 function initEvents() {
 	handleBtnNew();
 	handleFilter();
-	togglePanel();
+	handleToggleClick();
+	handleToggleKey();
 	handleBtnDelete();
 	handleCancel();
 	handleBtnSubmit();
