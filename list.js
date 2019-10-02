@@ -12,16 +12,12 @@ function genList() {
 		}
 		else {output += `
 			<li class='bookmark' id='${bookmarks[i].id}'>${bookmarks[i].title}
-				<button type='button' role='button' name='delete' class='delete'>Delete</button>
+				<button type='button' role='button' name='delete' class='btn-delete'>Delete</button>
 			</li>
 			<div class='expansion'>
 				<button type='button' role='button' name='visit site' class='btn-visit'>Visit Site</button>
 				<span>5 stars</span>
-				<article>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget posuere velit.
-					Vestibulum vehicula diam id nisi luctus, dignissim lobortis elit varius. Integer at feugiat metus.
-					Morbi at lorem dictum, gravida eros in, fermentum urna. Integer non lorem orci.
-					Phasellus massa sem, hendrerit vel condimentum ac, malesuada in orci.
-				</article>
+				<article>${bookmarks[i].desc}</article>
 			</div>
 		`;}
 	};
@@ -63,5 +59,6 @@ function renderMain() {
 }
 
 export default {
-	renderMain
+	renderMain,
+	renderList
 };

@@ -7,7 +7,7 @@ import list from './list.js';
 // triggers New button
 function handleBtnNew() {
 	$('.container').on('click', '.new', function() {
-		let obj = new store.genBookmark('Title 1', 4, 'https://www.google.com', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
+		const obj = new store.genBookmark('Title 1', 4, 'https://www.google.com', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
 		api.addItem(obj);
 		console.log(store.STORE.bookmarks);
 	});
@@ -21,19 +21,23 @@ function handleFilter() {
 	});
 }
 
-// toggles detail view
-function togglePanel() {
-	$('.container').on('click', 'li', function() {
-		// console.log(this.id);
-		let toggle = store.findById(this.id);
-		toggle.expanded = !toggle.expanded;
-		list.renderMain();
+// triggers Delete button
+function handleBtnDelete() {
+	$('.container').on('click', '.btn-delete', function() {
+		const id = $(this).parent().attr('id');
+		api.deleteItem(id);
 	});
 }
 
-// triggers Delete button
-function handleBtnDelete() {
-
+// toggles detail view
+function togglePanel() {
+	$('.container').on('click', 'li', function() {
+		const toggle = store.findById(this.id);
+		if (toggle !== undefined) {
+			toggle.expanded = !toggle.expanded;
+			list.renderMain();
+		};
+	});
 }
 
 // triggers Cancel button

@@ -12,8 +12,8 @@ const STORE = {
 };
 
 // find specific bookmark by ID
-function findById(id) {
-	return this.STORE.bookmarks.find(item => item.id === id);
+function findById(num) {
+	return STORE.bookmarks.find(obj => obj.id === num);
 }
 
 // generate bookmark object
@@ -23,7 +23,6 @@ function genBookmark(title, rating, url, desc) {
 		rating,
 		url,
 		desc,
-		expanded: false
 	}
 }
 
@@ -35,8 +34,10 @@ function addItem(obj) {
 }
 
 // removes bookmark from list
-function deleteItem() {
-
+function deleteItem(id) {
+	console.log(findById(id));
+	STORE.bookmarks.splice(findById(id), 1);
+	list.renderMain();
 }
 
 // toggles expansion view

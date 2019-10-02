@@ -38,11 +38,12 @@ function addItem(obj) {
 		headers: { 'Content-Type': 'application/json' },
 		body: newItem })
 		.then(res => store.addItem(res));
-		}
+}
 
 // Removes an item from the API and updates the store
-function deleteItem(obj) {
-
+function deleteItem(id) {
+	myFetch(`${base_url}/${id}`, {method: 'DELETE'});
+	store.deleteItem(id);
 }
 
 export default {

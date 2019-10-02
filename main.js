@@ -10,10 +10,8 @@ function main() {
 	api.getItems()
 		.then((items) => {
 			items.forEach((obj) => store.addItem(obj));
-			list.renderMain();
 		});
 	events.initEvents();
-	list.renderMain();
 }
 
 $(main());
