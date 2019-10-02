@@ -1,13 +1,15 @@
 'use strict';
 
-import store from "./store.js";
-import list from "./list.js";
+import store from './store.js';
+import api from './api.js';
+import list from './list.js';
 
 // triggers New button
 function handleBtnNew() {
 	$('.container').on('click', '.new', function() {
 		store.addItem();
-		// console.log(store.STORE);
+		console.log('click!');
+		console.log(store.STORE.bookmarks);
 	});
 }
 

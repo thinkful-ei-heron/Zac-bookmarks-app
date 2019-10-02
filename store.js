@@ -1,7 +1,9 @@
 'use strict';
 
 import list from './list.js';
+import api from './api.js';
 
+let error;
 const STORE = {
 	bookmarks: [],
 	adding: false,
@@ -10,25 +12,26 @@ const STORE = {
 };
 
 // find specific bookmark by ID
-function getId() {
-
+function findById(id) {
+	return this.STORE.bookmarks.find(item => item.id === id);
 }
 
 // generate bookmark object
-function genBookmark(id, title, rating, url, description) {
+function genBookmark(id, title, rating, url, desc) {
 	return {
 		id,
 		title,
 		rating,
 		url,
-		description,
+		desc,
 		expanded: false
 	}
 }
 
 // adds bookmark to list
 function addItem() {
-	let obj = new genBookmark(1, 'Title 1', 4, 'url', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
+	let obj = new genBookmark(1, 'Title 1', 4, 'https://www.google.com', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
+	api.addItem(obj);
 	STORE.bookmarks.push(obj);
 
 	list.renderMain();
@@ -46,7 +49,7 @@ function toggleExp() {
 
 export default {
 	STORE,
-	getId,
+	findById,
 	genBookmark,
 	addItem,
 	deleteItem,

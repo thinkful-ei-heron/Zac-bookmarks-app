@@ -9,9 +9,11 @@ import events from './events.js';
 function main() {
 	console.log('Loaded!');
 
-	api.getItems();
-		// take data and update store
-
+	api.getItems()
+		.then((items) => {
+			items.forEach((item) => store.STORE.bookmarks.push(item));
+			list.renderMain();
+		});
 	events.initEvents();
 	list.renderMain();
 }
