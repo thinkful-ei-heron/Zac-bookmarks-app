@@ -1,5 +1,15 @@
 import list from './list.js';
 
+// Bookmark keys:
+// {
+// 	id,
+// 	title,
+// 	rating,
+// 	url,
+// 	desc,
+// 	expanded
+// }
+
 let error;
 const STORE = {
 	bookmarks: [],
@@ -11,16 +21,6 @@ const STORE = {
 // find specific bookmark by ID
 function findById(num) {
 	return STORE.bookmarks.find(obj => obj.id === num);
-}
-
-// generate bookmark object
-function genBookmark(title, rating, url, desc) {
-	return {
-		title,
-		rating,
-		url,
-		desc,
-	}
 }
 
 // adds bookmark to list
@@ -44,7 +44,6 @@ function toggleExp() {
 export default {
 	STORE,
 	findById,
-	genBookmark,
 	addItem,
 	deleteItem,
 	toggleExp,

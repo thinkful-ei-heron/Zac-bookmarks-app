@@ -5,8 +5,6 @@ import list from './list.js';
 // triggers New button and switches view to form
 function handleBtnNew() {
 	$('.container').on('click', '.new', function() {
-		// const obj = new store.genBookmark('Title 1', 4, 'https://www.google.com', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
-		// api.addItem(obj);
 		store.STORE.adding = true;
 		list.render();
 	});
@@ -49,7 +47,20 @@ function handleCancel() {
 
 // triggers Submit
 function handleBtnSubmit() {
+	$('.container').on('submit', 'form', function() {
+		event.preventDefault();
+		const obj = {
+			title: this.name.value,
+			rating: this.rating.value,
+			url: this.url.value,
+			desc: this.description.value
+		}
+		console.log(obj);
+		api.addItem(obj);
 
+		store.STORE.adding = false;
+		list.render();
+	});
 }
 
 // Initializes event handlers

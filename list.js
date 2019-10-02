@@ -59,7 +59,7 @@ function renderForm() {
 				<input type='radio' name='rating' value='4' class='radio' id='star4'></input>
 				<label for='star5' class='radioLabel'>5</label>
 				<input type='radio' name='rating' value='5' class='radio' id='star5'></input>
-			<textarea rows='6' cols='80' placeholder='Link description...'></textarea>
+			<textarea rows='6' cols='80' name='description' placeholder='Link description...'></textarea>
 			<button type='button' role='button' name='cancel' class='cancel bottom-btn'>Cancel</button>
 			<input type='submit' value='Create' class='bottom-btn'>
 		</form>	
