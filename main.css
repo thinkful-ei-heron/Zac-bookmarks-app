@@ -7,6 +7,11 @@ body {
 	font-size: 16px;
 	background-color: rgb(220, 220, 220);
 }
+footer {
+	text-align: center;
+	font-size: 14px;
+	margin-top: 28px;
+}
 
 h1 {
 	text-align: center
@@ -48,6 +53,15 @@ h1 {
 }
 .btn-visit {
 	margin: 5px;
+}
+.btn:hover, .bookmark:hover {
+	background-color: rgb(206, 219, 253);
+}
+input[type='submit']:hover {
+	background-color: rgb(199, 255, 185);
+}
+.btn-delete:hover, .cancel:hover {
+	background-color: rgb(255, 185, 185);
 }
 /* ------------------------- */
 
@@ -94,7 +108,7 @@ label, input, textarea {
 .radio-group {
 	flex-direction: row;
 	align-items: center;
-	margin: 6px auto;
+	margin: 8px auto;
 }
 input[type='text'], input[type='url'] {
 	height: 26px;

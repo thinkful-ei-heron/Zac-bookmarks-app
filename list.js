@@ -26,12 +26,12 @@ function genList() {
 					<span class='mark-title'><b>${bookmarks[i].title}</b></span>
 					<button type='button' role='button' name='delete' class='btn btn-delete'>Delete</button>
 				</li>
-				<div class='expansion'>
+				<section class='expansion'>
 					<button type='button' role='button' name='visit site' class='btn btn-visit'
 					  id='${bookmarks[i].url}'>Visit Site</button>
 					<span class='rating'>${stars(bookmarks[i].rating)}</span>
 					<article>${bookmarks[i].desc}</article>
-				</div>
+				</section>
 			`;}
 		}
 	};
@@ -41,7 +41,7 @@ function genList() {
 // Render bookmark list
 function renderList() {
 	$('.container').html(`
-		<div class='btn-row'>
+		<section class='btn-row'>
 			<button type='button' role='button' name='new bookmark' class='new btn top-btn'>New Bookmark</button>
 			<select name='rating filter' class='filter btn top-btn'>
 				<option value=0>Rating Filter</option>
@@ -51,7 +51,7 @@ function renderList() {
 				<option value=2>&#9733 &#9733</option>
 				<option value=1>&#9733</option>
 			</select>
-		</div>
+		</section>
 		<ul class='list'>
 			${genList()}
 		</ul>
@@ -66,7 +66,7 @@ function renderForm() {
 			<input type='url' name='url' id='url' required>
 			<label for='name'>New Bookmark Name:</label>
 			<input type='text' name='name' id='name' required>
-			<div class='radio-group'>
+			<section class='radio-group'>
 				<label for='rating'>Rating:</label>
 					<label for='star1' class='radioLabel'>1</label>
 					<input type='radio' name='rating' value='1 &#9733' class='radio' id='star1' required></input>
@@ -78,12 +78,12 @@ function renderForm() {
 					<input type='radio' name='rating' value='4 &#9733' class='radio' id='star4' required></input>
 					<label for='star5' class='radioLabel'>5</label>
 					<input type='radio' name='rating' value='5 &#9733' class='radio' id='star5' required></input>
-			</div>
+			</section>
 			<textarea rows='6' cols='80' name='description' placeholder='Link description (optional)'></textarea>
-			<div class='btn-row'>
+			<section class='btn-row'>
 				<button type='button' role='button' name='cancel' class='cancel btn bottom-btn'>Cancel</button>
 				<input type='submit' value='Create' class='btn bottom-btn'>
-			</div>
+			</section>
 		</form>	
 	`)
 }
