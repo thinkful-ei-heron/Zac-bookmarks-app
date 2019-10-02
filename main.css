@@ -4,11 +4,17 @@
 
 body {
 	font-family: Arial, sans-serif;
+	font-size: 16px;
+	background-color: rgb(220, 220, 220);
 }
 
 h1 {
 	text-align: center
 }
+.mark-title {
+	font-size: 18px;
+}
+
 .error-box {
 	text-align: center;
 	color: red;
@@ -18,29 +24,48 @@ h1 {
 .container {
 	display: flex;
 	flex-direction: column;
-	width: 90%;
+	width: 98%;
 	margin: 0 auto;
-	border: 1px dashed black;
+}
+.top-row {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
 }
 
-.btn {
-	width: 100px;
-	height: 30px;
+.btn, form input[type='submit'] {
+	width: 120px;
+	height: 35px;
+	border: 1px solid black;
+	border-radius: 3px;
+	font-size: 14px;
 }
 .top-btn, .bottom-btn {
 	flex-direction: row;
-	margin: 10px 10px;
+	margin: 14px 10px;
 }
 .btn-visit {
 	margin: 12px;
 }
 
 .bookmark {
-	padding: 8px;
+	display: flex;
+	padding: 10px;
+	margin-top: 5px;
 	border: 1px solid black;
+	border-radius: 4px;
+	background-color: rgb(242, 242, 242);
+	flex-direction: row;
+	justify-content: space-between;
+	align-content: center;
 }
 .expansion {
-	padding: 10px;
+	width: 98%;
+	margin: 0 auto;
+	padding: 12px;
+	background-color: white;
+	border: 1px solid black;
+	border-top-style: none;
 }
 
 ul {
@@ -62,11 +87,11 @@ label, input, textarea {
 
 @media only screen and (min-width: 600px) {
 	.container {
-	  width: 80%;
+	  width: 70%;
 	}
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 992px) {
 	.container {
-	  width: 65%;
+	  width: 60%;
 	}
 }

@@ -1,5 +1,15 @@
 import store from './store.js';
 
+// Creates row of stars for ratings
+function stars(rating) {
+	let output = '';
+	for (let i = 1; i <= 5; i++) {
+		if (i > rating) output += '&#9734;';
+		else output += '&#9733;';
+	}
+	return output;
+}
+
 // Generate HTML for the list
 function genList() {
 	let bookmarks = store.STORE.bookmarks;
@@ -8,16 +18,18 @@ function genList() {
 		if (bookmarks[i].rating >= store.STORE.filter) {
 			if (bookmarks[i].expanded === false) {
 				output += `<li tabindex='0' class='bookmark' id='${bookmarks[i].id}'>
-				  ${bookmarks[i].title}- ${bookmarks[i].rating} stars</li>`;
+				  <span class='mark-title'><b>${bookmarks[i].title}</b></span>
+				  <span class='mark-rating'>${stars(bookmarks[i].rating)}</span></li>`;
 			}
 			else {output += `
-				<li tabindex='0' class='bookmark' id='${bookmarks[i].id}'>${bookmarks[i].title}
+				<li tabindex='0' class='bookmark' id='${bookmarks[i].id}'>
+					<span class='mark-title'><b>${bookmarks[i].title}</b></span>
 					<button type='button' role='button' name='delete' class='btn btn-delete'>Delete</button>
 				</li>
 				<div class='expansion'>
 					<button type='button' role='button' name='visit site' class='btn btn-visit'
-					  id='${bookmarks[i].url}'>Visit Site</a>
-					<span class='rating'>${bookmarks[i].rating} stars</span>
+					  id='${bookmarks[i].url}'>Visit Site</button>
+					<span class='rating'>${stars(bookmarks[i].rating)}</span>
 					<article>${bookmarks[i].desc}</article>
 				</div>
 			`;}
@@ -29,15 +41,17 @@ function genList() {
 // Render bookmark list
 function renderList() {
 	$('.container').html(`
-		<button type='button' role='button' name='new bookmark' class='new btn top-btn'>New Bookmark</button>
-		<select name='rating filter' class='filter btn top-btn'>
-			<option value=0>Rating Filter</option>
-			<option value=5>5 stars</option>
-			<option value=4>4 stars</option>
-			<option value=3>3 stars</option>
-			<option value=2>2 stars</option>
-			<option value=1>1 stars</option>
-		</select>
+		<div class='top-row'>
+			<button type='button' role='button' name='new bookmark' class='new btn top-btn'>New Bookmark</button>
+			<select name='rating filter' class='filter btn top-btn'>
+				<option value=0>Rating Filter</option>
+				<option value=5>5 stars</option>
+				<option value=4>4 stars</option>
+				<option value=3>3 stars</option>
+				<option value=2>2 stars</option>
+				<option value=1>1 stars</option>
+			</select>
+		</div>
 		<ul class='list'>
 			${genList()}
 		</ul>
@@ -64,7 +78,7 @@ function renderForm() {
 				<label for='star5' class='radioLabel'>5</label>
 				<input type='radio' name='rating' value='5' class='radio' id='star5' required></input>
 			<textarea rows='6' cols='80' name='description' placeholder='Link description (optional)'></textarea>
-			<button type='button' role='button' name='cancel' class='cancel btndddd bottom-btn'>Cancel</button>
+			<button type='button' role='button' name='cancel' class='cancel btn bottom-btn'>Cancel</button>
 			<input type='submit' value='Create' class='btn bottom-btn'>
 		</form>	
 	`)
