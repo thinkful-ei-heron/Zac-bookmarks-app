@@ -9,11 +9,11 @@ import events from './events.js';
 function main() {
 	console.log('Loaded!');
 
-	// api.getItems();
+	api.getItems();
 		// take data and update store
 
 	events.initEvents();
-	list.render();
+	list.renderMain();
 }
 
 $(main());

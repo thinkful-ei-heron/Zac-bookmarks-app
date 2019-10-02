@@ -1,13 +1,22 @@
 'use strict';
 
-// triggers New button
-function btnNew() {
+import store from "./store.js";
+import list from "./list.js";
 
+// triggers New button
+function handleBtnNew() {
+	$('.container').on('click', '.new', function() {
+		store.addItem();
+		// console.log(store.STORE);
+	});
 }
 
 // triggers Filter fx
-function filter() {
-
+function handleFilter() {
+	$('.container').on('change', '.filter', function() {
+		store.STORE.filter = Number(this.value);
+		// console.log(store.STORE.filter);
+	});
 }
 
 // toggles detail view
@@ -16,28 +25,28 @@ function toggleDetail() {
 }
 
 // triggers Delete button
-function btnDelete() {
+function handleBtnDelete() {
 
 }
 
 // triggers Cancel button
-function cancel() {
+function handleCancel() {
 
 }
 
 // triggers Submit
-function btnSubmit() {
+function handleBtnSubmit() {
 
 }
 
 // Initializes event handlers
 function initEvents() {
-	btnNew();
-	filter();
+	handleBtnNew();
+	handleFilter();
 	toggleDetail();
-	btnDelete();
-	cancel();
-	btnSubmit();
+	handleBtnDelete();
+	handleCancel();
+	handleBtnSubmit();
 }
 
 export default {

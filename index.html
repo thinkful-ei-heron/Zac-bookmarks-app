@@ -15,21 +15,20 @@
 	<div class='container'>
 		<button type='button' role='button' name='new bookmark' class='new top-btn'>New Bookmark</button>
 		<select name='rating filter' class='filter top-btn'>
-			<option value='5' selected>5 stars</option>
-			<option value='4'>4 stars</option>
-			<option value='3'>3 stars</option>
-			<option value='2'>2 stars</option>
-			<option value='1'>1 stars</option>
+			<option value=0 selected>Filter rating</option>
+			<option value=5>5 stars</option>
+			<option value=4>4 stars</option>
+			<option value=3>3 stars</option>
+			<option value=2>2 stars</option>
+			<option value=1>1 stars</option>
 		</select>
-		<div>
-			<div class='bookmark'>Title 1
-				<button type='button' role='button' name='delete' class='delete'>Delete</button>
-			</div>
-			<div class='bookmark'>Title 2 - stars</div>
-			<div class='bookmark'>Title 3 - stars</div>
-			<div class='bookmark'>Title 4 - stars</div>
-			<div class='bookmark'>Title 5 - stars</div>
-		</div>
+		<ul class='list'>
+			<li class='bookmark'>Title 1 - stars</li>
+			<li class='bookmark'>Title 2 - stars</li>
+			<li class='bookmark'>Title 3 - stars</li>
+			<li class='bookmark'>Title 4 - stars</li>
+			<li class='bookmark'>Title 5 - stars</li>
+		</ul>
 	</div>
 
 	<br />
@@ -83,10 +82,6 @@
   		src="https://code.jquery.com/jquery-3.4.1.min.js"
   		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
 		  crossorigin="anonymous"></script>
-	<script src='api.js' type='module'></script>
-	<script src='events.js' type='module'></script>
-	<script src='list.js' type='module'></script>
-	<script src='store.js' type='module'></script>
-	<script src='main.js'></script>
+	<script src='main.js' type='module'></script>
 </body>
 </html>
