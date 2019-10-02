@@ -44,3 +44,6 @@ label, input, textarea {
 	display: block;
 	margin: 5px;
 }
+.radio, .radioLabel {
+	display: inline;
+}

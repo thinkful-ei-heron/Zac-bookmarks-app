@@ -1,5 +1,3 @@
-'use strict';
-
 import store from './store.js';
 
 const base_url = 'https://thinkful-list-api.herokuapp.com/zac/bookmarks'

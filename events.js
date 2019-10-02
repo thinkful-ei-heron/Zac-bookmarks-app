@@ -1,15 +1,14 @@
-'use strict';
-
 import store from './store.js';
 import api from './api.js';
 import list from './list.js';
 
-// triggers New button
+// triggers New button and switches view to form
 function handleBtnNew() {
 	$('.container').on('click', '.new', function() {
-		const obj = new store.genBookmark('Title 1', 4, 'https://www.google.com', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
-		api.addItem(obj);
-		console.log(store.STORE.bookmarks);
+		// const obj = new store.genBookmark('Title 1', 4, 'https://www.google.com', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
+		// api.addItem(obj);
+		store.STORE.adding = true;
+		list.render();
 	});
 }
 
@@ -35,14 +34,17 @@ function togglePanel() {
 		const toggle = store.findById(this.id);
 		if (toggle !== undefined) {
 			toggle.expanded = !toggle.expanded;
-			list.renderMain();
+			list.render();
 		};
 	});
 }
 
 // triggers Cancel button
 function handleCancel() {
-
+	$('.container').on('click', '.cancel', function() {
+		store.STORE.adding = false;
+		list.render();
+	});
 }
 
 // triggers Submit

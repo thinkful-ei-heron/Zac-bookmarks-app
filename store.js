@@ -1,7 +1,4 @@
-'use strict';
-
 import list from './list.js';
-import api from './api.js';
 
 let error;
 const STORE = {
@@ -30,14 +27,13 @@ function genBookmark(title, rating, url, desc) {
 function addItem(obj) {
 	obj.expanded = false;
 	STORE.bookmarks.push(obj);
-	list.renderMain();
+	list.render();
 }
 
 // removes bookmark from list
 function deleteItem(id) {
-	console.log(findById(id));
 	STORE.bookmarks.splice(findById(id), 1);
-	list.renderMain();
+	list.render();
 }
 
 // toggles expansion view

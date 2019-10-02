@@ -1,5 +1,3 @@
-'use strict';
-
 import store from './store.js';
 
 // Generate HTML for the list
@@ -24,11 +22,6 @@ function genList() {
 	return output;
 }
 
-// Generate HTML for the new bookmark form
-function genForm() {
-	
-}
-
 // Render bookmark list
 function renderList() {
 	$('.container').html(`
@@ -49,16 +42,36 @@ function renderList() {
 
 // Render new bookmark form
 function renderForm() {
-
+	$('.container').html(`
+		<form>
+			<label for='url'>New Bookmark URL:</label>
+			<input type='url' name='url' id='url'>
+			<label for='name'>New Bookmark Name:</label>
+			<input type='text' name='name' id='name'>
+			<label for='rating'>Rating:</label>
+				<label for='star1' class='radioLabel'>1</label>
+				<input type='radio' name='rating' value='1' class='radio' id='star1'></input>
+				<label for='star2' class='radioLabel'>2</label>
+				<input type='radio' name='rating' value='2' class='radio' id='star2'></input>
+				<label for='star3' class='radioLabel'>3</label>
+				<input type='radio' name='rating' value='3' class='radio' id='star3'></input>
+				<label for='star4' class='radioLabel'>4</label>
+				<input type='radio' name='rating' value='4' class='radio' id='star4'></input>
+				<label for='star5' class='radioLabel'>5</label>
+				<input type='radio' name='rating' value='5' class='radio' id='star5'></input>
+			<textarea rows='6' cols='80' placeholder='Link description...'></textarea>
+			<button type='button' role='button' name='cancel' class='cancel bottom-btn'>Cancel</button>
+			<input type='submit' value='Create' class='bottom-btn'>
+		</form>	
+	`)
 }
 
 // Render container according to the current state
-function renderMain() {
+function render() {
 	if (store.STORE.adding === false) renderList();
 	else renderForm();
 }
 
 export default {
-	renderMain,
-	renderList
+	render,
 };

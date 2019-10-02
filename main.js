@@ -12,6 +12,7 @@ function main() {
 			items.forEach((obj) => store.addItem(obj));
 		});
 	events.initEvents();
+	list.render();
 }
 
 $(main());
