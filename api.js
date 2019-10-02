@@ -18,7 +18,6 @@ function myFetch(url, obj) {
 		  return Promise.reject(error);
 		}
 		else store.STORE.error = null;
-		console.log(data);
 		return data;
 	  });
   };
@@ -30,7 +29,7 @@ function getItems() {
 
 // Adds an item to the API list and updates the store
 function addItem(obj) {
-	let newItem = JSON.stringify(obj);
+	const newItem = JSON.stringify(obj);
 	myFetch(`${base_url}`, {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json' },

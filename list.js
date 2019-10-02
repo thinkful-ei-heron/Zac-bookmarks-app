@@ -4,8 +4,8 @@ import store from './store.js';
 function stars(rating) {
 	let output = '';
 	for (let i = 1; i <= 5; i++) {
-		if (i > rating) output += '&#9734;';
-		else output += '&#9733;';
+		if (i > rating) output += '&#9734';
+		else output += '&#9733';
 	}
 	return output;
 }
@@ -41,15 +41,15 @@ function genList() {
 // Render bookmark list
 function renderList() {
 	$('.container').html(`
-		<div class='top-row'>
+		<div class='btn-row'>
 			<button type='button' role='button' name='new bookmark' class='new btn top-btn'>New Bookmark</button>
 			<select name='rating filter' class='filter btn top-btn'>
 				<option value=0>Rating Filter</option>
-				<option value=5>5 stars</option>
-				<option value=4>4 stars</option>
-				<option value=3>3 stars</option>
-				<option value=2>2 stars</option>
-				<option value=1>1 stars</option>
+				<option value=5>&#9733 &#9733 &#9733 &#9733 &#9733</option>
+				<option value=4>&#9733 &#9733 &#9733 &#9733</option>
+				<option value=3>&#9733 &#9733 &#9733</option>
+				<option value=2>&#9733 &#9733</option>
+				<option value=1>&#9733</option>
 			</select>
 		</div>
 		<ul class='list'>
@@ -66,20 +66,24 @@ function renderForm() {
 			<input type='url' name='url' id='url' required>
 			<label for='name'>New Bookmark Name:</label>
 			<input type='text' name='name' id='name' required>
-			<label for='rating'>Rating:</label>
-				<label for='star1' class='radioLabel'>1</label>
-				<input type='radio' name='rating' value='1' class='radio' id='star1' required></input>
-				<label for='star2' class='radioLabel'>2</label>
-				<input type='radio' name='rating' value='2' class='radio' id='star2' required></input>
-				<label for='star3' class='radioLabel'>3</label>
-				<input type='radio' name='rating' value='3' class='radio' id='star3' required></input>
-				<label for='star4' class='radioLabel'>4</label>
-				<input type='radio' name='rating' value='4' class='radio' id='star4' required></input>
-				<label for='star5' class='radioLabel'>5</label>
-				<input type='radio' name='rating' value='5' class='radio' id='star5' required></input>
+			<div class='radio-group'>
+				<label for='rating'>Rating:</label>
+					<label for='star1' class='radioLabel'>1</label>
+					<input type='radio' name='rating' value='1 &#9733' class='radio' id='star1' required></input>
+					<label for='star2' class='radioLabel'>2</label>
+					<input type='radio' name='rating' value='2 &#9733' class='radio' id='star2' required></input>
+					<label for='star3' class='radioLabel'>3</label>
+					<input type='radio' name='rating' value='3 &#9733' class='radio' id='star3' required></input>
+					<label for='star4' class='radioLabel'>4</label>
+					<input type='radio' name='rating' value='4 &#9733' class='radio' id='star4' required></input>
+					<label for='star5' class='radioLabel'>5</label>
+					<input type='radio' name='rating' value='5 &#9733' class='radio' id='star5' required></input>
+			</div>
 			<textarea rows='6' cols='80' name='description' placeholder='Link description (optional)'></textarea>
-			<button type='button' role='button' name='cancel' class='cancel btn bottom-btn'>Cancel</button>
-			<input type='submit' value='Create' class='btn bottom-btn'>
+			<div class='btn-row'>
+				<button type='button' role='button' name='cancel' class='cancel btn bottom-btn'>Cancel</button>
+				<input type='submit' value='Create' class='btn bottom-btn'>
+			</div>
 		</form>	
 	`)
 }

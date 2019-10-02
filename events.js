@@ -7,6 +7,7 @@ function handleBtnNew() {
 	$('.container').on('click', '.new', function() {
 		store.STORE.adding = true;
 		list.render();
+		$('#url').focus();
 	});
 }
 
@@ -14,7 +15,6 @@ function handleBtnNew() {
 function handleFilter() {
 	$('.container').on('change', '.filter', function() {
 		store.STORE.filter = Number(this.value);
-		console.log(store.STORE.filter);
 		list.render();
 	});
 }
@@ -63,7 +63,6 @@ function handleBtnSubmit() {
 			url: this.url.value,
 			desc: this.description.value
 		}
-		console.log(obj);
 		api.addItem(obj);
 
 		store.STORE.adding = false;
