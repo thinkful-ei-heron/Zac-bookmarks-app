@@ -16,7 +16,7 @@ h1 {
 }
 
 .container {
-	display: inline-flex;
+	display: flex;
 	flex-direction: column;
 	width: 90%;
 	margin: 0 auto;
@@ -25,20 +25,22 @@ h1 {
 
 .btn {
 	width: 100px;
+	height: 30px;
 }
 .top-btn, .bottom-btn {
+	flex-direction: row;
 	margin: 10px 10px;
-}
-.bottom-btn {
-	display: inline-block;
 }
 .btn-visit {
 	margin: 12px;
 }
 
 .bookmark {
-	padding: 5px;
+	padding: 8px;
 	border: 1px solid black;
+}
+.expansion {
+	padding: 10px;
 }
 
 ul {

@@ -15,9 +15,9 @@ function genList() {
 					<button type='button' role='button' name='delete' class='btn btn-delete'>Delete</button>
 				</li>
 				<div class='expansion'>
-					<a href='${bookmarks[i].url}' target="_blank" type='button' role='button' name='visit site'
-					  class='btn btn-visit'>Visit Site</a>
-					<span>${bookmarks[i].rating} stars</span>
+					<button type='button' role='button' name='visit site' class='btn btn-visit'
+					  id='${bookmarks[i].url}'>Visit Site</a>
+					<span class='rating'>${bookmarks[i].rating} stars</span>
 					<article>${bookmarks[i].desc}</article>
 				</div>
 			`;}

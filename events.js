@@ -39,11 +39,11 @@ function togglePanel() {
 }
 
 // triggers Visit button
-// function handleBtnVisit() {
-// 	$('.container').on('click', '.btn-visit', function() {
-
-// 	});
-// }
+function handleBtnVisit() {
+	$('.container').on('click', '.btn-visit', function() {
+		window.open($(this).attr('id'));
+	});
+}
 
 // triggers Cancel button
 function handleCancel() {
@@ -79,7 +79,7 @@ function initEvents() {
 	handleBtnDelete();
 	handleCancel();
 	handleBtnSubmit();
-	// handleBtnVisit();
+	handleBtnVisit();
 }
 
 export default {
