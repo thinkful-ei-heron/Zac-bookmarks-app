@@ -7,7 +7,8 @@ import list from './list.js';
 // triggers New button
 function handleBtnNew() {
 	$('.container').on('click', '.new', function() {
-		store.addItem();
+		let obj = new store.genBookmark('Title 1', 4, 'https://www.google.com', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
+		api.addItem(obj);
 		console.log('click!');
 		console.log(store.STORE.bookmarks);
 	});
@@ -22,8 +23,10 @@ function handleFilter() {
 }
 
 // toggles detail view
-function toggleDetail() {
-
+function togglePanel() {
+	$('.container').on('click', 'li', function() {
+		console.log(this.id);
+	})
 }
 
 // triggers Delete button
@@ -45,7 +48,7 @@ function handleBtnSubmit() {
 function initEvents() {
 	handleBtnNew();
 	handleFilter();
-	toggleDetail();
+	togglePanel();
 	handleBtnDelete();
 	handleCancel();
 	handleBtnSubmit();

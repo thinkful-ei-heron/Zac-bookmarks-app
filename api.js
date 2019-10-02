@@ -33,11 +33,12 @@ function getItems() {
 // Adds an item to the API list and updates the store
 function addItem(obj) {
 	let newItem = JSON.stringify(obj);
-	return myFetch(`${base_url}`, {
+	myFetch(`${base_url}`, {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json' },
-		body: newItem });
-}
+		body: newItem })
+		.then(res => store.addItem(res));
+		}
 
 // Removes an item from the API and updates the store
 function deleteItem(obj) {

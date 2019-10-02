@@ -11,7 +11,7 @@ function main() {
 
 	api.getItems()
 		.then((items) => {
-			items.forEach((item) => store.STORE.bookmarks.push(item));
+			items.forEach((obj) => store.addItem(obj));
 			list.renderMain();
 		});
 	events.initEvents();

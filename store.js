@@ -17,9 +17,8 @@ function findById(id) {
 }
 
 // generate bookmark object
-function genBookmark(id, title, rating, url, desc) {
+function genBookmark(title, rating, url, desc) {
 	return {
-		id,
 		title,
 		rating,
 		url,
@@ -29,11 +28,8 @@ function genBookmark(id, title, rating, url, desc) {
 }
 
 // adds bookmark to list
-function addItem() {
-	let obj = new genBookmark(1, 'Title 1', 4, 'https://www.google.com', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
-	api.addItem(obj);
+function addItem(obj) {
 	STORE.bookmarks.push(obj);
-
 	list.renderMain();
 }
 

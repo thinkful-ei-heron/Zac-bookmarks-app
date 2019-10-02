@@ -7,7 +7,7 @@ function genList() {
 	let bookmarks = store.STORE.bookmarks;
 	let output = '';
 	for (let i = 0; i < bookmarks.length; i++) {
-		output += `<li class='bookmark'>${bookmarks[i].title} - ${bookmarks[i].rating} stars</li>`;
+		output += `<li class='bookmark' id='${bookmarks[i].id}'>${bookmarks[i].title} - ${bookmarks[i].rating} stars</li>`;
 	}
 	return output;
 }
