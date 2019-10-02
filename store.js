@@ -23,6 +23,10 @@ function findById(num) {
 	return STORE.bookmarks.find(obj => obj.id === num);
 }
 
+function findIndexById(num) {
+	return STORE.bookmarks.findIndex(obj => obj.id === num);
+}
+
 // adds bookmark to list
 function addItem(obj) {
 	obj.expanded = false;
@@ -32,7 +36,7 @@ function addItem(obj) {
 
 // removes bookmark from list
 function deleteItem(id) {
-	STORE.bookmarks.splice(findById(id), 1);
+	STORE.bookmarks.splice(findIndexById(id), 1);
 	list.render();
 }
 
@@ -44,6 +48,7 @@ function toggleExp() {
 export default {
 	STORE,
 	findById,
+	findIndexById,
 	addItem,
 	deleteItem,
 	toggleExp,
