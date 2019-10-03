@@ -3,7 +3,7 @@
 }
 
 body {
-	font-family: Arial, sans-serif;
+	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
 	background-color: rgb(220, 220, 220);
 }
@@ -14,7 +14,8 @@ footer {
 }
 
 h1 {
-	text-align: center
+	text-align: center;
+	font-family: 'Roboto Slab', serif;
 }
 .mark-title {
 	font-size: 18px;
@@ -66,6 +67,7 @@ input[type='submit']:hover {
 /* ------------------------- */
 
 .bookmark {
+	font-family: 'Roboto Slab', serif;
 	display: flex;
 	padding: 6px;
 	margin-top: 5px;
